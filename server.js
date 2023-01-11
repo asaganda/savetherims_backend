@@ -6,7 +6,13 @@ const cors = require('cors')
 app.use(methodOverride('_method'))
 app.use(express.json());
 app.use(cors())
+require('dotenv').config()
 
+// Database
+// const MONGODB_URI = process.env.MONGODB_URI
+const MONGODB_URI = 'mongodb://localhost:27017/savetherims'
+
+// Model
 const Coordinates = require('./models/coordinates.js')
 
 // ROUTES
@@ -49,7 +55,7 @@ app.listen(3000, () => {
     console.log('listening...')
 })
 
-mongoose.connect('mongodb://localhost:27017/savetherims')
+mongoose.connect(MONGODB_URI)
 mongoose.connection.once('open', () => {
     console.log('connected to mongo...')
 })
