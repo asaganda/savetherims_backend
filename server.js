@@ -8,6 +8,9 @@ app.use(express.json());
 app.use(cors())
 require('dotenv').config()
 
+// Port
+const PORT = process.env.PORT
+
 // Database
 const MONGODB_URI = process.env.MONGODB_URI
 // const MONGODB_URI = 'mongodb://localhost:27017/savetherims'
@@ -51,7 +54,7 @@ app.put('/coord/:id', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log('listening...')
 })
 
