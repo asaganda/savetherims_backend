@@ -55,7 +55,9 @@ app.listen(3000, () => {
     console.log('listening...')
 })
 
-mongoose.connect(MONGODB_URI)
+mongoose.connect(MONGODB_URI, () => {
+    console.log('the connection with mongo is established')
+})
 mongoose.connection.once('open', () => {
     console.log('connected to mongo...')
 })
