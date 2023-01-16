@@ -7,6 +7,11 @@ const coordinatesSchema = new mongoose.Schema({
     lng: {
         type: Number,
         required: true
+    },
+    fixed: {
+        type: Boolean,
+        required: true,
+        default: false
     }
 })
 
