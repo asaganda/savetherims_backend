@@ -12,8 +12,8 @@ require('dotenv').config()
 const PORT = process.env.PORT
 
 // Database
-const MONGODB_URI = process.env.MONGODB_URI
-// const MONGODB_URI = 'mongodb://localhost:27017/savetherims'
+// const MONGODB_URI = process.env.MONGODB_URI
+const MONGODB_URI = 'mongodb://localhost:27017/savetherims'
 
 // Model
 const Coordinates = require('./models/coordinates.js')
@@ -28,8 +28,11 @@ app.get('/coord', (req, res) => {
 
 // Create coord route
 app.post('/coord', (req, res) => {
-    Coordinates.create(req.body, (err, createdCoord) => {
+    console.log(`post route reached!`)
+    Coordinates.create(req.body, (err, createdCoord) => { 
+        console.log(`record being created in db`)
         res.json(createdCoord)
+        console.log(createdCoord)
     })
 })
 
