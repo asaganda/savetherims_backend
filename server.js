@@ -12,8 +12,8 @@ require('dotenv').config()
 const PORT = process.env.PORT
 
 // Database
-// const MONGODB_URI = process.env.MONGODB_URI
-const MONGODB_URI = 'mongodb://localhost:27017/savetherims'
+const MONGODB_URI = process.env.MONGODB_URI
+// const MONGODB_URI = 'mongodb://localhost:27017/savetherims'
 
 // Model
 const Coordinates = require('./models/coordinates.js')

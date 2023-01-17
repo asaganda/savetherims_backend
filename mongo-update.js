@@ -1,5 +1,5 @@
 const { MongoClient } = require('mongodb')
-const uri = "mongodb+srv://asaganda:Andysag9008@savetherims.00nadvi.mongodb.net/?retryWrites=true&w=majority"
+const uri = process.env.MONGODB_URI
 
 const client = new MongoClient(uri)
 
